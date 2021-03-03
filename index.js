@@ -13,18 +13,10 @@ const db = require("./db/db.json");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Body Parser middleware
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-
-
-// Directs to homepage
-// app.get("/", (req, res) => {
-//     res.sendFile(path.join(__dirname, homepage));
-//     console.log(db);
-// })
-
+// Middleware: routes to htmls
 app.use("/", routeHtml);
 
 // Get posts
